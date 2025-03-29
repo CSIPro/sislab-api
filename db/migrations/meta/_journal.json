@@ -8,6 +8,20 @@
       "when": 1738889841345,
       "tag": "0000_regular_cerise",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1743272967693,
+      "tag": "0001_perfect_nomad",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1743276624254,
+      "tag": "0002_famous_jackal",
+      "breakpoints": true
     }
   ]
 }

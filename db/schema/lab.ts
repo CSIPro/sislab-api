@@ -1,8 +1,15 @@
-import { pgTable, serial, timestamp, varchar } from "drizzle-orm/pg-core";
+import {
+  boolean,
+  pgTable,
+  serial,
+  timestamp,
+  varchar,
+} from "drizzle-orm/pg-core";
 
 export const labs = pgTable("labs", {
   id: serial("id").primaryKey(),
   name: varchar("name", { length: 10 }).notNull(),
+  isActive: boolean("is_active").notNull().default(true),
   createdAt: timestamp("created_at", {
     withTimezone: true,
   }).defaultNow(),

@@ -19,7 +19,7 @@ export const classGroups = pgTable("class_groups", {
   numberOfStudents: integer("number_of_students").notNull(),
   numberOfTeams: integer("number_of_teams").notNull(),
   dayOfWeek: integer("day_of_week").notNull(),
-  startTime: integer("start_time").notNull(),
+  startTime: varchar("start_time").notNull(),
   isActive: boolean("is_active").notNull().default(true),
   userId: integer("user_id").references(() => users.id),
   period: varchar("period").notNull(),

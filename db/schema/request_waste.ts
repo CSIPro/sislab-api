@@ -4,7 +4,6 @@ import {
   pgTable,
   primaryKey,
   timestamp,
-  varchar,
 } from "drizzle-orm/pg-core";
 import { labRequests } from "./lab_request";
 import { wastes } from "./waste";
@@ -18,8 +17,6 @@ export const requestWastes = pgTable(
     requestId: integer("request_id")
       .notNull()
       .references(() => labRequests.id),
-    quantity: integer("quantity"),
-    unit: varchar("unit", { length: 5 }),
     omitted: boolean("omitted").default(false),
     createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
     updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow(),

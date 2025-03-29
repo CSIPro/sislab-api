@@ -1,4 +1,10 @@
-import { integer, pgTable, primaryKey, timestamp } from "drizzle-orm/pg-core";
+import {
+  integer,
+  pgTable,
+  primaryKey,
+  timestamp,
+  varchar,
+} from "drizzle-orm/pg-core";
 import { wastes } from "./waste";
 import { experiments } from "./experiment";
 
@@ -11,6 +17,8 @@ export const experimentWastes = pgTable(
     experimentId: integer("experiment_id")
       .notNull()
       .references(() => experiments.id),
+    container: varchar("container"),
+    treatment: varchar("treatment").default("Neutralizar y verter al drenaje"),
     createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
     updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow(),
   },

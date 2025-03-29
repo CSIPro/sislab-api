@@ -2,6 +2,7 @@ import {
   integer,
   pgTable,
   serial,
+  text,
   timestamp,
   varchar,
 } from "drizzle-orm/pg-core";
@@ -9,6 +10,7 @@ import {
 export const experiments = pgTable("experiments", {
   id: serial("id").primaryKey(),
   name: varchar("name").notNull(),
+  description: text("description"),
   experimentNumber: integer("experiment_number").notNull(),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
   updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow(),

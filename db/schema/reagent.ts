@@ -6,10 +6,10 @@ export const reagents = pgTable("reagents", {
   chemicalNotation: varchar("chemical_notation").notNull(),
   createdAt: timestamp("created_at", {
     withTimezone: true,
-  }),
+  }).defaultNow(),
   updatedAt: timestamp("updated_at", {
     withTimezone: true,
-  }),
+  }).defaultNow(),
 });
 
 export type ReagentInsert = typeof reagents.$inferInsert;

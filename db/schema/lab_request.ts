@@ -9,7 +9,7 @@ export const labRequests = pgTable("lab_requests", {
   groupId: integer("group_id").references(() => classGroups.id),
   experimentId: integer("experiment_id").references(() => experiments.id),
   requestDate: timestamp("request_date", { withTimezone: true }).notNull(),
-  handledByUserId: integer("handled_by_user_id").references(() => users.id),
+  handledBy: integer("handled_by").references(() => users.id),
   handledAt: timestamp("handled_date", { withTimezone: true }),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow(),
   updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow(),
